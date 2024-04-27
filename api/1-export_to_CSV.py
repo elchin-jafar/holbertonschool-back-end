@@ -23,7 +23,7 @@ def main():
     for todo in done:
         print("\t {}".format(todo['title']))
 
-    csv_file = "USER_ID.csv"
+    csv_file = "{}.csv".format(sys.argv[1])
     with open(csv_file, mode="w") as file:
         writer = csv.writer(file, quoting=csv.QUOTE_ALL)
         for task in result:
