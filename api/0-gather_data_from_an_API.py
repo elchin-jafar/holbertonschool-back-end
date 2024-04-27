@@ -2,12 +2,14 @@
 """best module"""
 import requests
 import sys
+import json
 
 
 def main():
     BASE_URL = "https://jsonplaceholder.typicode.com/"
-    r_employee = requests.get("{}users/{}".format(BASE_URL, sys.argv[1]))
-    EMPLOYEE_NAME = r_employee.json()["name"]
+    r_employee = json.loads(requests.get("{}users/{}".format(BASE_URL, sys.argv[1])).text)
+    EMPLOYEE_NAME = r_employee["name"]
+    print(EMPLOYEE_NAME)
 
     r_todo = requests.get("{}todos".format(BASE_URL))
 
