@@ -9,6 +9,7 @@ def main():
     BASE_URL = "https://jsonplaceholder.typicode.com/"
     r_employee = requests.get("{}users/{}".format(BASE_URL, sys.argv[1]))
     EMPLOYEE_NAME = r_employee.json()["name"]
+    USERNAME = r_employee.json()["username"]
 
     r_todo = requests.get("{}todos".format(BASE_URL))
 
@@ -27,7 +28,7 @@ def main():
     with open(csv_file, mode="w") as file:
         writer = csv.writer(file, quoting=csv.QUOTE_ALL)
         for task in result:
-            writer.writerow([sys.argv[1], EMPLOYEE_NAME, task["completed"],
+            writer.writerow([sys.argv[1], USERNAME, task["completed"],
                              task["title"]])
 
 
