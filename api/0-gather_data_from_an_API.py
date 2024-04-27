@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """best module"""
+import json
 import requests
 import sys
-import json
 
 
 def main():
