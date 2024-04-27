@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""best module"""
 import requests
 import sys
 
