@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""best module"""
+"""export to json file"""
 import json
 import requests
 import sys
